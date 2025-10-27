@@ -1,32 +1,34 @@
 //202510125115
 //yang11429@outlook.com
 //杨润
-#include<stdio.h>
-int main()
-{
-	int n = 0;
-	scanf("%d", &n);
+#include <stdio.h>
+#include <stdbool.h>
+int main() {
+	int n;
 	int i = 2;
-	int isPrime = 1;
-	if (n <= 50)
+	bool isPrime = true;
+	scanf("%d", &n);
+	if (n <= 0 || n >= 50) 
 	{
-		while(i<n)
+		return 0;
+	}
+	if (n == 1) {
+		isPrime = false;
+	}
+	while( i < n) 
+	{
+		if (n % i == 0) 
 		{
-			if (n % i == 0)
-			{
-				isPrime = 0;
-				break;
-			}
-			i++;
+			isPrime = false; 
+			break;
 		}
-		if (isPrime == 1)
-		{
-			printf("密钥安全，密码设置成功\n");
-		}
-		else
-		{
-			printf("密钥不安全，请重新输入");
-		}
+		i++;
+	}
+	if (isPrime) {
+		printf("密钥安全，密码设置成功\n");
+	}
+	else {
+		printf("密钥不安全，请重新输入\n");
 	}
 	return 0;
 }
