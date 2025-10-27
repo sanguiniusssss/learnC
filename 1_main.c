@@ -7,6 +7,8 @@ int main() {
 	int a = 0;
 	int isSafe = 0;
 	scanf("%d", &n);
+	if (n < 50&&n>1)
+	{
 	for (a = 1; a <= 50; a++) {
 		if (n % a == 0) 
 		{ 
@@ -19,6 +21,7 @@ int main() {
 	}
 	else {
 		printf("密钥不安全，请重新输入\n");
+	}
 	}
 	return 0;
 }
