@@ -4,37 +4,29 @@
 #include<stdio.h>
 int main()
 {
-    int a=0;
-    int b=0;
-    char c=0;
-    scanf("%d %d %c",&a,&b,&c);
-    switch(c)
-    {
-        case '+':
-        {
-            printf("%d\n",a+b);
-            break;
-        }
-        case'-':
-        {
-            printf("%d\n",a-b);
-            break;
-        }
-        case'*':
-        {
-            printf("%d\n",a*b);
-            break;
-        }
-        case'/':
-        {
-            if(b!=0)
-            {
-                printf("%.1f\n",(float)a/b);
-            }
-            break;
-        }
-        default:
-        break;
-    }
-    return 0;
+	int n = 0;
+	scanf("%d", &n);
+	int i = 2;
+	int isPrime = 1;
+	if (n <= 50)
+	{
+		while(i<n)
+		{
+			if (n % i == 0)
+			{
+				isPrime = 0;
+				break;
+			}
+			i++;
+		}
+		if (isPrime == 1)
+		{
+			printf("密钥安全，密码设置成功\n");
+		}
+		else
+		{
+			printf("密钥不安全，请重新输入");
+		}
+	}
+	return 0;
 }
