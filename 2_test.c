@@ -1,29 +1,26 @@
 //202510125115
 //yang11429@outlook.com
 //杨润
-#include <stdio.h>
+#include<stdio.h>
 int main()
 {
-	int n = 0;
-	int j = 0;
+	int arr[3][3] = { 0 };
 	int i = 0;
-	int k = 0;
-	int a = 0;
-	for (n = 100; n <= 999; n++)
+	int j = 0;
+	for (i = 0; i < 3; i++)
 	{
-		j = n / 100;
-		k = n % 100 / 10;
-		i = n %10;
-
-		if (j* j* j + k * k * k + i * i * i ==n)
+		for (j = 0; j < 3; j++)
 		{
-			if (a == 1)
-			{
-				printf(" ");
-			}
-			printf("%d", n);
-			a = 1;
+			scanf("%d" ,& arr[i][j]);
 		}
+	}
+	for (i = 0; i < 3; i++)
+	{
+		for (j = 0; j < 3; j++)
+		{
+			printf("%d ", arr[j][i]);
+		}
+		printf("\n");
 	}
 	return 0;
 }
