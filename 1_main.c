@@ -4,7 +4,7 @@
 #include<stdio.h>
 int main()
 {
-	int arr[3][3] = { 0 };
+	int arr[3][3] = { 0 }；
 	int i = 0;
 	int j = 0;
 	for (i = 0; i < 3; i++)
