@@ -2,29 +2,23 @@
 //yang11429@outlook.com
 //杨润
 #include<stdio.h>
+int power(int a, int b)
+{
+	int i = 0;
+	int result = 1;
+	for (i = 0;i < b; i++)
+	{
+		result *= a;
+	}
+	return result;
+}
 int main()
 {
-	int n = 100;
-	int j = 0;
-	int i = 0;
-	int k = 0;
-	int a = 0;
-	while(n <= 999)
-	{
-		j = n / 100;
-		k = n % 100 / 10;
-		i = n % 10;
-
-		if (j * j * j + k * k * k + i * i * i == n)
-		{
-			if (a == 1)
-			{
-				printf(" ");
-			}
-			printf("%d", n);
-			a = 1;
-		}
-		n++;
-	}
+	int a=power(1,2);
+	int b = power(2, 2);
+	int c = power(3, 2);
+	int d = power(4, 2);
+	int e = power(5, 2);
+	printf("%d", a + b + c + d + e);
 	return 0;
 }
