@@ -2,31 +2,19 @@
 //yang11429@outlook.com
 //杨润
 #include<stdio.h>
-int main()
+int sum(int a1, int an,int step)
 {
 	int i = 0;
-	int sum = 0;
-	int arr[5] = {0};
-	int a = 0;
-	for (i = 0; i < 4; i++)
+	int result = 0;
+	for (i = a1; i <= an; i = i + step)
 	{
-		scanf("%d", &arr[i]);
-		sum += arr[i];	
+		result += i;
 	}
-	arr[4]=sum;
-	for (i = 0; i < 5; i++)
-	{
-		if (i == 5)
-		{
-			continue;
-		}
-		if (a ==1)
-		{
-			
-			printf(" ");
-		}
-		printf("%d", arr[i]);
-		a = 1;
-	}
+	return result;
+}
+int main()
+{
+	int a = sum(1,100,1);
+	printf("%d", a);
 	return 0;
 }
