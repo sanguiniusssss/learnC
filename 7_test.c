@@ -2,37 +2,37 @@
 //yang11429@outlook.com
 //杨润
 #include<stdio.h>
-void Return(int arr[], int length)
-{
-
-	int temp = 0;
-	int j = 0;
-
-	for (j = 0; j < length / 2; j++)
-	{
-		temp = arr[j];
-		arr[j] = arr[length - 1 - j];
-		arr[length - 1 - j] = temp;
-	}
-}
 int main()
 {
-	int arr[5] = { 0 };
+	int arr[10] = { 0 };
 	int i = 0;
-	int a = 0;
-	for (i = 0; i < 5; i++)
+	int j = 0;
+	int* p = arr;
+	int temp = 0;
+	for (i = 0; i < 10; i++)
 	{
-		scanf("%d", &arr[i]);
+		scanf("%d", p);
+		p++;
 	}
-	Return(arr,5);
-	for (i = 0; i < 5; i++)
+	p = arr;
+	for (i = 0; i < 10 - 1; i++)
 	{
-		if (a == 1)
+		for (j = 0; j < 10 - i - 1; j++)
 		{
-			printf(" ");
+			if (*(p+j) > *(p + j+1))
+			{
+				temp = *(p + j);
+				*(p + j) = *(p + j + 1);
+				*(p + j + 1) = temp;
+			}
+
 		}
-		printf("%d", arr[i]);
-		a = 1;
+	}
+	p = arr;
+	for (i = 0; i < 10; i++)
+	{
+		printf("%d ", *p);
+		p++;
 	}
 	return 0;
 }
