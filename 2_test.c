@@ -4,24 +4,24 @@
 #include<stdio.h>
 int main()
 {
-	int arr[3][3] = { 0 };
+	int arr[5] = { 0 };
+	int* p = arr;
 	int i = 0;
-	int j = 0;
-	for (i = 0; i < 3; i++)
+	for (i = 0; i < sizeof(arr) / sizeof(arr[0]); i++)
 	{
-		for (j = 0; j < 3; j++)
-		{
-			scanf("%d" ,& arr[i][j]);
-		}
+		scanf("%d", p);
+		p++;
 	}
-	for (i = 0; i < 3; i++)
+	for (i = 0; i < sizeof(arr) / sizeof(arr[0]); i++)
 	{
-		for (j = 0; j < 3; j++)
-		{
-			printf("%d ", arr[j][i]);
-		}
-		printf("\n");
+		*p *= 2;
+		p++;
+	}
+	p = arr;
+	for (i = 0; i < sizeof(arr) / sizeof(arr[0]); i++)
+	{
+		printf("%d ",*p);
+		p++;
 	}
 	return 0;
 }
-
