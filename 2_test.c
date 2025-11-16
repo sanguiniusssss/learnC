@@ -12,6 +12,7 @@ int main()
 		scanf("%d", p);
 		p++;
 	}
+	p =arr;
 	for (i = 0; i < sizeof(arr) / sizeof(arr[0]); i++)
 	{
 		*p *= 2;
