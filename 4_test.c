@@ -2,23 +2,33 @@
 //yang11429@outlook.com
 //杨润
 #include<stdio.h>
-int power(int a, int b)
+int add(int arr[],int size)
 {
 	int i = 0;
-	int result = 1;
-	for (i = 0;i < b; i++)
+	int* p = arr;
+	for (i = 0; i < size; i++)
 	{
-		result *= a;
+		*p += 1;
+		p++;
 	}
-	return result;
+		
 }
 int main()
 {
-	int a=power(1,2);
-	int b = power(2, 2);
-	int c = power(3, 2);
-	int d = power(4, 2);
-	int e = power(5, 2);
-	printf("%d", a + b + c + d + e);
+	int arr[5] = { 0 };
+	int i = 0;
+	int* p = arr;
+	for (i = 0; i < sizeof(arr) / sizeof(arr[0]); i++)
+	{
+		scanf("%d", p);
+		p++;
+	}
+	add(arr,5);
+	p = arr;
+	for (i = 0; i < sizeof(arr) / sizeof(arr[0]); i++)
+	{
+		printf("%d ", *p);
+		p++;
+	}
 	return 0;
 }
